@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "install-dependencies": "sudo apt install make && sudo apt install cmake && sudo apt install clang",
+    "install-dependencies": "sudo apt-get install make && sudo apt-get install cmake && sudo apt-get install clang",
     "cmake-build": "cd build && cmake -DCMAKE_CXX_COMPILER=clang++ -G \"Unix Makefiles\" ../MathSolver",
     "compile": "cd build && make",
     "build": "npm run install-dependencies && npm run cmake-build && npm run compile",
