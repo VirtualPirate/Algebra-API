@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu
 
 # Update the package repository and install necessary packages
 RUN apt-get update && apt-get install -y make cmake clang npm
