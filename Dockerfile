@@ -21,5 +21,6 @@ RUN npm install
 RUN cd build && cmake -DCMAKE_CXX_COMPILER=clang++ -G "Unix Makefiles" ../MathSolver
 RUN cd build && make
 
+EXPOSE 8080
 EXPOSE 3000
 CMD ["npm", "run", "start"]
