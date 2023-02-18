@@ -8,10 +8,21 @@ import cors from "cors";
 import EventEmitter from "events";
 
 let child;
+let client;
 
 function start() {
   console.log("Starting process...");
   child = spawn("./build/program");
+
+  client = net.createConnection(
+    {
+      port: 8080,
+      host: "127.0.0.1",
+    },
+    () => {
+      console.log("Connected to server");
+    }
+  );
 
   child.on("exit", (code, signal) => {
     console.log(`Process exited with code ${code} and signal ${signal}.`);
@@ -23,15 +34,15 @@ function start() {
 start();
 
 // Creating Socket Connection
-const client = net.createConnection(
-  {
-    port: 8080,
-    host: "127.0.0.1",
-  },
-  () => {
-    console.log("Connected to server");
-  }
-);
+// client = net.createConnection(
+//   {
+//     port: 8080,
+//     host: "127.0.0.1",
+//   },
+//   () => {
+//     console.log("Connected to server");
+//   }
+// );
 
 client.on("end", () => {
   console.log("Disconnected from server");
