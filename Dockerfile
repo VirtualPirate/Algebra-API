@@ -2,6 +2,11 @@ FROM ubuntu
 
 # Update the package repository and install necessary packages
 RUN apt-get update && apt-get install -y make cmake clang npm curl
+# RUN apt-get install make
+# RUN apt-get install cmake
+# RUN apt-get install clang
+# RUN apt-get install npm
+# RUN apt-get install curl
 
 ENV NODE_VERSION=18.2.0
 RUN curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
