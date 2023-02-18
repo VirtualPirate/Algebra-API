@@ -57,7 +57,7 @@ A response is received with step by step subtitution and simplification.
 
 **Please Note:** The values of variables are not a required field.
 
-### Request data without `variables` field
+## Request data without `variables` field
 
 ```json
 { "expression": "(a + b)^2" }
@@ -77,7 +77,7 @@ const axios = require("axios").default;
 const options = {
   method: "GET",
   url: "https://algebraapi.onrender.com/",
-  data: { expression: "(a + b)^2" },
+  data: { expression: "(a + b)^2", variables: { x: 2 } },
 };
 
 axios
@@ -94,6 +94,8 @@ axios
 
 ```javascript
 {
-  steps: ["(a + b)^2", "a^2 + 2ab + b^2"];
+  steps: ["(2 + b)^2", "4 + 4b + b^2"];
 }
 ```
+
+The Algebra Solver has been tested on various types of algebraic expression. But, it is not guareented that the response is always correct mathematically. Please, inform me in which the API responds with wrong data.
