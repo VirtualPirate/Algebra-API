@@ -9,7 +9,7 @@ This is a algebra solver API. Which accepts `Algebraic Expressions` and sends ba
 | Parameter  | Description                                                             |
 | ---------- | ----------------------------------------------------------------------- |
 | expression | Should contain the algebraic expression, this is going to be simplified |
-| variables  | Contains a list of subtitute values for variables in the expression     |
+| variables  | Contains a list of substitute values for variables in the expression    |
 
 ## How to contruct an `expression`
 
@@ -47,7 +47,7 @@ Every algebraic expression has `numbers`, `variables` and `mathematical operator
 ```
 
 Now when we make a call to this API with this data as JSON body.
-A response is received with step by step subtitution and simplification.
+A response is received with step by step substitution and simplification.
 
 ### Response
 
@@ -98,4 +98,6 @@ axios
 }
 ```
 
-The Algebra Solver has been tested on various types of algebraic expression. But, it is not guareented that the response is always correct mathematically. Please, inform me in which the API responds with wrong data.
+The Algebra Solver has been tested on various types of algebraic expression. But, it is not guarenteed that the response is always mathematically correct.
+
+**Please, inform me with details in which the API responds with wrong data.**
