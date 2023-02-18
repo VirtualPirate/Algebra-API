@@ -35,14 +35,14 @@ Every algebraic expression has `numbers`, `variables` and `mathematical operator
 
 ## How to pass `variables` for subtitution during simplification
 
-`variables` field must contain key value pairs of `variable_name : variable_value`
+`variables` field must contain key value pairs of `variable_name(type string) : variable_value(type number)`
 
 ### Example Request data
 
 ```json
 {
   "expression": "x^2 + y",
-  "variables": { "x": "20", "y": "5.5" }]
+  "variables": { "x": 20, "y": 5.5 }]
 }
 ```
 

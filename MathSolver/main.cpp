@@ -61,7 +61,7 @@ int main() {
 	// Bind the socket to an address and port
     struct sockaddr_in address;
     address.sin_family = AF_INET;
-    address.sin_addr.s_addr = htonl(INADDR_LOOPBACK);;
+    address.sin_addr.s_addr = htonl(INADDR_ANY);
     address.sin_port = htons(PORT);
     bind(server_socket, (struct sockaddr *)&address, sizeof(address));
 
@@ -90,7 +90,7 @@ int main() {
           for(auto& e: data["variables"].items()) {
     
             const char* key = e.key().c_str();
-            double value = std::stod(e.value().get<std::string>());
+            double value = e.value().get<double>();
             subtitute_list.append(Variable_Subtitutor{*key, value} );
           }
 
