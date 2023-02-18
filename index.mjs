@@ -26,6 +26,7 @@ start();
 const client = net.createConnection(
   {
     port: 8080,
+    host: "127.0.0.1",
   },
   () => {
     console.log("Connected to server");

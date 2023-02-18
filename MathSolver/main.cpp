@@ -61,7 +61,7 @@ int main() {
 	// Bind the socket to an address and port
     struct sockaddr_in address;
     address.sin_family = AF_INET;
-    address.sin_addr.s_addr = INADDR_ANY;
+    address.sin_addr.s_addr = htonl(INADDR_LOOPBACK);;
     address.sin_port = htons(PORT);
     bind(server_socket, (struct sockaddr *)&address, sizeof(address));
 
