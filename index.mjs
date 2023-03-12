@@ -15,7 +15,7 @@ function start() {
   console.log("Starting process...");
   child = spawn("./build/program");
 
-  // ? Connects the node js server to the Algebra Engine through sockets
+  // ? Connects the Node Js server to the Algebra Engine through sockets
   client = net.createConnection(
     {
       port: 8080,
@@ -34,7 +34,7 @@ function start() {
   });
 }
 
-start();
+start(); // Starts the Algebra Engine
 
 client.on("end", () => {
   console.log("Disconnected from server");
