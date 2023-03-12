@@ -75,7 +75,7 @@ A response is received with step by step substitution and simplification.
 const axios = require("axios").default;
 
 const options = {
-  method: "GET",
+  method: "POST",
   url: "https://algebraapi.onrender.com/",
   data: { expression: "(a + b)^2", variables: { x: 2 } },
 };
