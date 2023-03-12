@@ -2,7 +2,7 @@
 
 This is a algebra solver API. Which accepts `Algebraic Expressions` and sends back a step by step simplification of Algebraic Expression
 
-#### `GET` /
+#### `POST` /
 
 ## Parameters to execute API calls
 

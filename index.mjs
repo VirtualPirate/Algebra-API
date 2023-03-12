@@ -10,10 +10,12 @@ import EventEmitter from "events";
 let child;
 let client;
 
+// ? This program starts the Algebra Engine program which opens a socket connection.
 function start() {
   console.log("Starting process...");
   child = spawn("./build/program");
 
+  // ? Connects the node js server to the Algebra Engine through sockets
   client = net.createConnection(
     {
       port: 8080,
@@ -24,6 +26,7 @@ function start() {
     }
   );
 
+  // ? And if the Algebra program stops running for any reason, it is restarted
   child.on("exit", (code, signal) => {
     console.log(`Process exited with code ${code} and signal ${signal}.`);
     console.log("Restarting process...");
@@ -32,17 +35,6 @@ function start() {
 }
 
 start();
-
-// Creating Socket Connection
-// client = net.createConnection(
-//   {
-//     port: 8080,
-//     host: "0.0.0.0",
-//   },
-//   () => {
-//     console.log("Connected to server");
-//   }
-// );
 
 client.on("end", () => {
   console.log("Disconnected from server");
@@ -68,7 +60,7 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
+app.post("/", (req, res) => {
   // console.log(req.body);
 
   if (req.body.expression) {
